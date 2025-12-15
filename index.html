@@ -1,78 +1,1412 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- arquivos style -->
-  <link href="./css/style.css" rel="stylesheet">
-  <link href="./css/darkMode.css" rel="stylesheet">
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Agendamento de Treinamento Físico - Polícia Judicial Federal</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1152d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111318] dark:text-white overflow-x-hidden">
+<div class="relative flex h-full min-h-screen w-full flex-col group/design-root">
+<!-- Header -->
+<header class="flex items-center bg-white dark:bg-[#1C2029] p-4 pb-2 justify-between sticky top-0 z-20 shadow-sm">
+<div class="flex items-center gap-3">
+<!-- Logo Placeholer / Emblem -->
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 overflow-hidden">
+<span class="material-symbols-outlined text-primary" style="font-size: 24px;">shield</span>
+</div>
+<h2 class="text-[#111318] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Agendamento</h2>
+</div>
+<div class="flex items-center justify-end gap-2">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-[#111318] dark:text-white" style="font-size: 24px;">notifications</span>
+</button>
+<button class="flex size-8 overflow-hidden rounded-full bg-gray-200">
+<div class="w-full h-full bg-cover bg-center" data-alt="Profile picture of a police officer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA4x10fgGR6TBlDSkk95tB3JrTRjvIwMghIwaorRXYpDyaJRqG49D-U7nEvU_9DaYgmM5xLecxHoL6c5AVR5gx00m0TM3kjI4gBtzHHJf5K5w7iQmZr67dl58QBGzYz_u9ur0d3QzBzXtk-wUNYvNCRN61DMbFXUUZnwgCwpqVhMsIThOjb-rA9nUzt_eVnyxlgs_gcqTKyz3xrR3YhdwNaSc8BJSKiiQRLheQH-mDC48zKiZfVkCK6Vt2_n3WtJSHRuV_oRnjHiOE");'></div>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 pb-24">
+<!-- Calendar Strip -->
+<div class="bg-white dark:bg-[#1C2029] pb-4 mb-2 rounded-b-xl shadow-sm">
+<div class="flex flex-col gap-2 p-4 pb-0">
+<div class="flex items-center justify-between mb-2">
+<button class="p-2 hover:bg-black/5 dark:hover:bg-white/10 rounded-full">
+<span class="material-symbols-outlined text-[#111318] dark:text-white" style="font-size: 20px;">chevron_left</span>
+</button>
+<p class="text-[#111318] dark:text-white text-base font-bold leading-tight">Outubro 2023</p>
+<button class="p-2 hover:bg-black/5 dark:hover:bg-white/10 rounded-full">
+<span class="material-symbols-outlined text-[#111318] dark:text-white" style="font-size: 20px;">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-7 gap-1">
+<!-- Days of Week Headers -->
+<div class="text-center text-xs font-medium text-[#616f89] dark:text-gray-400 py-1">D</div>
+<div class="text-center text-xs font-medium text-[#616f89] dark:text-gray-400 py-1">S</div>
+<div class="text-center text-xs font-medium text-[#616f89] dark:text-gray-400 py-1">T</div>
+<div class="text-center text-xs font-medium text-[#616f89] dark:text-gray-400 py-1">Q</div>
+<div class="text-center text-xs font-medium text-[#616f89] dark:text-gray-400 py-1">Q</div>
+<div class="text-center text-xs font-medium text-[#616f89] dark:text-gray-400 py-1">S</div>
+<div class="text-center text-xs font-medium text-[#616f89] dark:text-gray-400 py-1">S</div>
+<!-- Calendar Dates -->
+<button class="flex h-10 w-full flex-col items-center justify-center rounded-lg text-sm font-medium text-[#111318] dark:text-white opacity-40">29</button>
+<button class="flex h-10 w-full flex-col items-center justify-center rounded-lg text-sm font-medium text-[#111318] dark:text-white opacity-40">30</button>
+<button class="flex h-10 w-full flex-col items-center justify-center rounded-lg text-sm font-medium text-[#111318] dark:text-white opacity-40">31</button>
+<button class="flex h-10 w-full flex-col items-center justify-center rounded-lg text-sm font-medium text-[#111318] dark:text-white">1</button>
+<button class="flex h-10 w-full flex-col items-center justify-center rounded-lg text-sm font-medium text-[#111318] dark:text-white">2</button>
+<button class="flex h-10 w-full flex-col items-center justify-center rounded-lg text-sm font-medium text-[#111318] dark:text-white">3</button>
+<button class="flex h-10 w-full flex-col items-center justify-center rounded-lg text-sm font-medium text-[#111318] dark:text-white">4</button>
+<button class="flex h-10 w-full flex-col items-center justify-center rounded-lg text-sm font-medium text-[#111318] dark:text-white">5</button>
+<button class="flex h-10 w-full flex-col items-center justify-center rounded-lg text-sm font-medium text-[#111318] dark:text-white">6</button>
+<button class="flex h-10 w-full flex-col items-center justify-center rounded-lg text-sm font-medium text-[#111318] dark:text-white">7</button>
+<button class="flex h-10 w-full flex-col items-center justify-center rounded-lg text-sm font-medium text-[#111318] dark:text-white">8</button>
+<button class="flex h-10 w-full flex-col items-center justify-center rounded-lg text-sm font-medium text-[#111318] dark:text-white">9</button>
+<button class="flex h-10 w-full flex-col items-center justify-center rounded-lg text-sm font-medium text-[#111318] dark:text-white">10</button>
+<button class="flex h-10 w-full flex-col items-center justify-center rounded-lg text-sm font-medium text-[#111318] dark:text-white">11</button>
+<button class="flex h-10 w-full flex-col items-center justify-center rounded-lg bg-primary text-sm font-bold text-white shadow-md shadow-primary/30">12</button>
+<button class="flex h-10 w-full flex-col items-center justify-center rounded-lg text-sm font-medium text-[#111318] dark:text-white">13</button>
+<button class="flex h-10 w-full flex-col items-center justify-center rounded-lg text-sm font-medium text-[#111318] dark:text-white">14</button>
+<button class="flex h-10 w-full flex-col items-center justify-center rounded-lg text-sm font-medium text-[#111318] dark:text-white">15</button>
+<button class="flex h-10 w-full flex-col items-center justify-center rounded-lg text-sm font-medium text-[#111318] dark:text-white">16</button>
+<button class="flex h-10 w-full flex-col items-center justify-center rounded-lg text-sm font-medium text-[#111318] dark:text-white">17</button>
+<button class="flex h-10 w-full flex-col items-center justify-center rounded-lg text-sm font-medium text-[#111318] dark:text-white">18</button>
+</div>
+</div>
+</div>
+<!-- My Scheduled Sessions Section -->
+<div class="px-4 pt-2">
+<div class="flex items-center justify-between py-2">
+<h3 class="text-[#111318] dark:text-white text-lg font-bold leading-tight">Meus Agendamentos</h3>
+<button class="text-primary text-sm font-bold">Ver todos</button>
+</div>
+<div class="flex items-stretch justify-between gap-4 rounded-xl bg-white dark:bg-[#1C2029] p-4 shadow-[0_2px_8px_rgba(0,0,0,0.08)] mb-4">
+<div class="flex flex-col gap-2 flex-[2_2_0px]">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/30 px-2 py-0.5 text-xs font-bold text-green-700 dark:text-green-400">
+                                CONFIRMADO
+                            </span>
+</div>
+<div>
+<p class="text-[#111318] dark:text-white text-base font-bold leading-tight">Treino de Defesa Pessoal</p>
+<p class="text-[#616f89] dark:text-gray-400 text-sm font-normal leading-normal mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-base">schedule</span>
+                                12 Out, 08:00 - 09:30
+                            </p>
+<p class="text-[#616f89] dark:text-gray-400 text-sm font-normal leading-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-base">location_on</span>
+                                Centro de Treinamento - Sala B
+                            </p>
+</div>
+</div>
+<div class="w-24 bg-center bg-no-repeat bg-cover rounded-lg shrink-0" data-alt="Police officers practicing self defense techniques in a gym" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBGGL2aHa5RTdrUOraCdYVpmCWjezzlnmo7uqL6lNJifw7MjMzf1sPnXKKn7IrCP2DlQZnQx7yL8ThG-hhTPugZyV0QOvhNevDf2_1XyccmgcKjSVIOKakv1WRIHWOui4sx75cWVLWrQTtXUlsl9HoANUK6VPqk5QczaD7RdCWgnJpXDkoNgCJvom1erFYImMRhOahKIQtn-GuDmdgys-wAPrOzofdylynM6kXKA6o3akIxx0FVfDQ7cyqUnAjQ4rVe1Y1KfGPdWdg");'></div>
+</div>
+</div>
+<!-- Available Slots Section -->
+<div class="px-4">
+<h3 class="text-[#111318] dark:text-white text-lg font-bold leading-tight py-3">Horários Disponíveis (12 Out)</h3>
+<div class="flex flex-col gap-3">
+<!-- Slot 1 -->
+<div class="flex flex-col rounded-xl bg-white dark:bg-[#1C2029] shadow-[0_1px_3px_rgba(0,0,0,0.05)] overflow-hidden border border-gray-100 dark:border-gray-800">
+<div class="p-4 flex flex-row gap-4 items-center">
+<div class="flex flex-col items-center justify-center bg-background-light dark:bg-gray-800 rounded-lg p-3 min-w-[70px]">
+<span class="text-sm font-bold text-[#111318] dark:text-white">10:00</span>
+<span class="text-xs text-[#616f89] dark:text-gray-400">11:00</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="text-[#111318] dark:text-white text-base font-bold">Condicionamento Físico</h4>
+<span class="inline-flex items-center rounded-md bg-blue-50 dark:bg-blue-900/20 px-2 py-1 text-xs font-medium text-blue-700 dark:text-blue-300 ring-1 ring-inset ring-blue-700/10">8 Vagas</span>
+</div>
+<p class="text-[#616f89] dark:text-gray-400 text-sm mt-1">Instrutor: Agente Silva</p>
+<div class="flex items-center gap-1 mt-1 text-xs text-[#616f89] dark:text-gray-400">
+<span class="material-symbols-outlined text-sm">fitness_center</span>
+<span>Pista de Corrida</span>
+</div>
+</div>
+<button class="bg-primary hover:bg-blue-700 text-white p-2 rounded-full flex items-center justify-center shrink-0 shadow-sm shadow-primary/40">
+<span class="material-symbols-outlined" style="font-size: 20px;">add</span>
+</button>
+</div>
+</div>
+<!-- Slot 2 -->
+<div class="flex flex-col rounded-xl bg-white dark:bg-[#1C2029] shadow-[0_1px_3px_rgba(0,0,0,0.05)] overflow-hidden border border-gray-100 dark:border-gray-800">
+<div class="p-4 flex flex-row gap-4 items-center">
+<div class="flex flex-col items-center justify-center bg-background-light dark:bg-gray-800 rounded-lg p-3 min-w-[70px]">
+<span class="text-sm font-bold text-[#111318] dark:text-white">14:00</span>
+<span class="text-xs text-[#616f89] dark:text-gray-400">15:30</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="text-[#111318] dark:text-white text-base font-bold">Tiro Tático</h4>
+<span class="inline-flex items-center rounded-md bg-orange-50 dark:bg-orange-900/20 px-2 py-1 text-xs font-medium text-orange-700 dark:text-orange-300 ring-1 ring-inset ring-orange-700/10">3 Vagas</span>
+</div>
+<p class="text-[#616f89] dark:text-gray-400 text-sm mt-1">Instrutor: Inspetor Costa</p>
+<div class="flex items-center gap-1 mt-1 text-xs text-[#616f89] dark:text-gray-400">
+<span class="material-symbols-outlined text-sm">target</span>
+<span>Estande A</span>
+</div>
+</div>
+<button class="bg-primary hover:bg-blue-700 text-white p-2 rounded-full flex items-center justify-center shrink-0 shadow-sm shadow-primary/40">
+<span class="material-symbols-outlined" style="font-size: 20px;">add</span>
+</button>
+</div>
+</div>
+<!-- Slot 3 (Full) -->
+<div class="flex flex-col rounded-xl bg-white dark:bg-[#1C2029] shadow-[0_1px_3px_rgba(0,0,0,0.05)] overflow-hidden border border-gray-100 dark:border-gray-800 opacity-70">
+<div class="p-4 flex flex-row gap-4 items-center">
+<div class="flex flex-col items-center justify-center bg-background-light dark:bg-gray-800 rounded-lg p-3 min-w-[70px]">
+<span class="text-sm font-bold text-[#111318] dark:text-white">16:00</span>
+<span class="text-xs text-[#616f89] dark:text-gray-400">17:00</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="text-[#111318] dark:text-white text-base font-bold">Musculação Livre</h4>
+<span class="inline-flex items-center rounded-md bg-red-50 dark:bg-red-900/20 px-2 py-1 text-xs font-medium text-red-700 dark:text-red-300 ring-1 ring-inset ring-red-600/10">Lotado</span>
+</div>
+<p class="text-[#616f89] dark:text-gray-400 text-sm mt-1">Monitor: Agente Lima</p>
+<div class="flex items-center gap-1 mt-1 text-xs text-[#616f89] dark:text-gray-400">
+<span class="material-symbols-outlined text-sm">fitness_center</span>
+<span>Academia Central</span>
+</div>
+</div>
+<button class="bg-gray-200 dark:bg-gray-700 text-gray-400 dark:text-gray-500 p-2 rounded-full flex items-center justify-center shrink-0 cursor-not-allowed" disabled="">
+<span class="material-symbols-outlined" style="font-size: 20px;">block</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="h-6"></div>
+</main>
+<!-- Floating Action Button (New Schedule) -->
+<div class="fixed bottom-20 right-4 z-10">
+<button class="flex items-center justify-center gap-2 bg-primary text-white rounded-full h-14 px-6 shadow-lg shadow-primary/40 hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">edit_calendar</span>
+<span class="font-bold text-base">Novo</span>
+</button>
+</div>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-[#1C2029] border-t border-gray-200 dark:border-gray-800 pb-safe pt-2 px-6 shadow-lg z-20 h-auto min-h-[64px]">
+<div class="flex justify-between items-center pb-2">
+<button class="flex flex-col items-center justify-center gap-1 w-16 group">
+<span class="material-symbols-outlined text-[#616f89] dark:text-gray-400 group-hover:text-primary transition-colors">home</span>
+<span class="text-[10px] font-medium text-[#616f89] dark:text-gray-400 group-hover:text-primary transition-colors">Início</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-16 group">
+<div class="bg-primary/10 dark:bg-primary/20 px-4 py-1 rounded-full">
+<span class="material-symbols-outlined text-primary fill-1">calendar_month</span>
+</div>
+<span class="text-[10px] font-bold text-primary">Agenda</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-16 group">
+<span class="material-symbols-outlined text-[#616f89] dark:text-gray-400 group-hover:text-primary transition-colors">person</span>
+<span class="text-[10px] font-medium text-[#616f89] dark:text-gray-400 group-hover:text-primary transition-colors">Perfil</span>
+</button>
+</div>
+<!-- Safe Area Spacer for iPhone home indicator -->
+<div class="h-4 w-full"></div>
+</nav>
+</div>
+<!-- Adicione este código ANTES do fechamento da tag </body> -->
 
-  <title>Calendario</title>
-</head>
-  <!-- dark mode -->
-  
-  <div class="toggle">
-    <input id="switch" type="checkbox" name="theme">
-    <label for="switch">Toggle</label>
-  </div>
-
-<!-- -------- -->
-
-<body>
-  <div id="container">
-      <div id="header">
-        <div id="monthDisplay"></div>
-
-        <div>
-          <button id="backButton">Voltar</button>
-          <button id="nextButton">Próximo</button>
+<!-- Modal de Notificações -->
+<div id="notificationsModal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-[#1C2029] rounded-xl w-full max-w-md max-h-[80vh] overflow-hidden">
+        <div class="p-6 border-b dark:border-gray-800">
+            <div class="flex justify-between items-center">
+                <h3 class="text-lg font-bold">Notificações</h3>
+                <button onclick="Notifications.close()" class="text-gray-500 hover:text-gray-700">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="flex gap-2 mt-4">
+                <button onclick="Notifications.markAllAsRead()" class="text-sm text-primary hover:underline">
+                    Marcar todas como lidas
+                </button>
+                <button onclick="Notifications.clearAll()" class="text-sm text-red-500 hover:underline ml-auto">
+                    Limpar todas
+                </button>
+            </div>
         </div>
-          
-      </div>
+        <div id="notificationsList" class="overflow-y-auto max-h-[60vh]">
+            <!-- Notificações serão carregadas aqui -->
+        </div>
+    </div>
+</div>
 
-      <div id="weekdays">
-        <div>Domingo</div>
-        <div>Segunda-feira</div>
-        <div>Terça-feira</div>
-        <div>Quarta-feira</div>
-        <div>Quinta-feira</div>
-        <div>Sexta-feira</div>
-        <div>Sábado</div>
-      </div>
+<!-- Modal de Filtros -->
+<div id="filtersModal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-[#1C2029] rounded-xl w-full max-w-md">
+        <div class="p-6 border-b dark:border-gray-800">
+            <div class="flex justify-between items-center">
+                <h3 class="text-lg font-bold">Filtrar Treinos</h3>
+                <button onclick="Filters.close()" class="text-gray-500 hover:text-gray-700">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+        </div>
+        <div class="p-6">
+            <div class="space-y-4">
+                <div>
+                    <h4 class="font-medium mb-2">Tipo de Treino</h4>
+                    <div id="typeFilters" class="flex flex-wrap gap-2">
+                        <!-- Filtros serão gerados dinamicamente -->
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-2">Instrutor</h4>
+                    <select id="instructorFilter" class="w-full border rounded-lg p-2 dark:bg-gray-800 dark:border-gray-700">
+                        <option value="">Todos os instrutores</option>
+                        <!-- Instrutores serão carregados dinamicamente -->
+                    </select>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-2">Local</h4>
+                    <select id="locationFilter" class="w-full border rounded-lg p-2 dark:bg-gray-800 dark:border-gray-700">
+                        <option value="">Todos os locais</option>
+                        <!-- Locais serão carregados dinamicamente -->
+                    </select>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-2">Status</h4>
+                    <select id="statusFilter" class="w-full border rounded-lg p-2 dark:bg-gray-800 dark:border-gray-700">
+                        <option value="">Todos os status</option>
+                        <option value="disponivel">Disponíveis</option>
+                        <option value="agendado">Agendados</option>
+                        <option value="concluido">Concluídos</option>
+                        <option value="cancelado">Cancelados</option>
+                    </select>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-2">Período</h4>
+                    <div class="flex gap-2">
+                        <input type="date" id="startDate" class="flex-1 border rounded-lg p-2 dark:bg-gray-800 dark:border-gray-700">
+                        <span class="self-center">até</span>
+                        <input type="date" id="endDate" class="flex-1 border rounded-lg p-2 dark:bg-gray-800 dark:border-gray-700">
+                    </div>
+                </div>
+            </div>
+            <div class="flex gap-3 mt-6">
+                <button onclick="Filters.clear()" class="flex-1 bg-gray-200 dark:bg-gray-700 rounded-lg p-3 font-medium">
+                    Limpar
+                </button>
+                <button onclick="Filters.apply()" class="flex-1 bg-primary text-white rounded-lg p-3 font-medium">
+                    Aplicar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- Modal de Avaliação -->
+<div id="ratingModal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-[#1C2029] rounded-xl w-full max-w-md">
+        <div class="p-6">
+            <h3 class="text-lg font-bold mb-2">Avaliar Treino</h3>
+            <p id="ratingActivity" class="text-gray-600 dark:text-gray-400 mb-4"></p>
+            
+            <div class="mb-6">
+                <div class="flex justify-center gap-1 mb-2" id="starRating">
+                    <!-- Estrelas serão geradas dinamicamente -->
+                </div>
+                <p id="ratingText" class="text-center text-sm text-gray-500">Clique para avaliar</p>
+            </div>
+            
+            <div class="mb-4">
+                <label class="block text-sm font-medium mb-2">Comentário (opcional)</label>
+                <textarea id="ratingComment" rows="3" 
+                    class="w-full border rounded-lg p-3 dark:bg-gray-800 dark:border-gray-700"
+                    placeholder="Como foi seu treino?"></textarea>
+            </div>
+            
+            <div class="flex gap-3">
+                <button onclick="Ratings.cancel()" class="flex-1 bg-gray-200 dark:bg-gray-700 rounded-lg p-3 font-medium">
+                    Cancelar
+                </button>
+                <button onclick="Ratings.submit()" class="flex-1 bg-primary text-white rounded-lg p-3 font-medium">
+                    Enviar Avaliação
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
-      <!-- div dinamic -->
-      <div id="calendar" ></div>
+<!-- Modal de Calendário Completo -->
+<div id="calendarModal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-[#1C2029] rounded-xl w-full max-w-2xl">
+        <div class="p-6 border-b dark:border-gray-800">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center gap-4">
+                    <button onclick="FullCalendar.prevYear()" class="p-2 hover:bg-black/5 dark:hover:bg-white/10 rounded-full">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <h3 id="calendarYear" class="text-lg font-bold">2026</h3>
+                    <button onclick="FullCalendar.nextYear()" class="p-2 hover:bg-black/5 dark:hover:bg-white/10 rounded-full">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </div>
+                <button onclick="FullCalendar.close()" class="text-gray-500 hover:text-gray-700">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+        </div>
+        <div class="p-6">
+            <div id="fullCalendarGrid" class="grid grid-cols-3 gap-4">
+                <!-- Meses serão gerados dinamicamente -->
+            </div>
+        </div>
+    </div>
+</div>
 
-   
-  </div>
+<script>
+// ==============================
+// SISTEMA DE NOTIFICAÇÕES PUSH
+// ==============================
+const Notifications = {
+    list: [],
+    
+    init() {
+        this.loadFromStorage();
+        this.setupServiceWorker();
+        this.updateBadge();
+        this.render();
+    },
+    
+    setupServiceWorker() {
+        if ('serviceWorker' in navigator && 'PushManager' in window) {
+            navigator.serviceWorker.register('/sw.js').catch(error => {
+                console.log('Service Worker registration failed:', error);
+            });
+        }
+    },
+    
+    requestPermission() {
+        if ('Notification' in window) {
+            Notification.requestPermission().then(permission => {
+                if (permission === 'granted') {
+                    this.create({
+                        title: 'Notificações ativadas!',
+                        message: 'Você receberá alertas sobre seus agendamentos.',
+                        type: 'success',
+                        read: false,
+                        date: new Date().toISOString()
+                    });
+                }
+            });
+        }
+    },
+    
+    create(notification) {
+        notification.id = Date.now();
+        notification.date = notification.date || new Date().toISOString();
+        notification.read = notification.read || false;
+        
+        this.list.unshift(notification);
+        this.saveToStorage();
+        this.updateBadge();
+        this.render();
+        
+        // Mostra notificação push se permitido
+        if (Notification.permission === 'granted') {
+            this.showPushNotification(notification);
+        }
+        
+        return notification;
+    },
+    
+    showPushNotification(notification) {
+        const options = {
+            body: notification.message,
+            icon: '/icon.png',
+            badge: '/badge.png',
+            tag: 'agendamento',
+            data: { id: notification.id }
+        };
+        
+        new Notification(notification.title, options);
+    },
+    
+    markAsRead(id) {
+        const notification = this.list.find(n => n.id === id);
+        if (notification) {
+            notification.read = true;
+            this.saveToStorage();
+            this.updateBadge();
+            this.render();
+        }
+    },
+    
+    markAllAsRead() {
+        this.list.forEach(n => n.read = true);
+        this.saveToStorage();
+        this.updateBadge();
+        this.render();
+    },
+    
+    clearAll() {
+        this.list = [];
+        this.saveToStorage();
+        this.updateBadge();
+        this.render();
+    },
+    
+    updateBadge() {
+        const unreadCount = this.list.filter(n => !n.read).length;
+        const badge = document.querySelector('.notification-badge');
+        
+        if (unreadCount > 0) {
+            if (!badge) {
+                const button = document.querySelector('button .material-symbols-outlined:contains("notifications")').closest('button');
+                const badge = document.createElement('span');
+                badge.className = 'notification-badge absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center';
+                button.style.position = 'relative';
+                button.appendChild(badge);
+            }
+            badge.textContent = unreadCount > 9 ? '9+' : unreadCount;
+        } else if (badge) {
+            badge.remove();
+        }
+    },
+    
+    render() {
+        const container = document.getElementById('notificationsList');
+        if (!container) return;
+        
+        if (this.list.length === 0) {
+            container.innerHTML = `
+                <div class="p-8 text-center">
+                    <span class="material-symbols-outlined text-4xl text-gray-400 mb-2">notifications_off</span>
+                    <p class="text-gray-500">Nenhuma notificação</p>
+                </div>
+            `;
+            return;
+        }
+        
+        container.innerHTML = this.list.map(notification => `
+            <div class="p-4 border-b dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer ${notification.read ? '' : 'bg-blue-50 dark:bg-blue-900/20'}"
+                 onclick="Notifications.markAsRead(${notification.id})">
+                <div class="flex items-start gap-3">
+                    <span class="material-symbols-outlined mt-1 ${
+                        notification.type === 'success' ? 'text-green-500' :
+                        notification.type === 'warning' ? 'text-yellow-500' :
+                        notification.type === 'error' ? 'text-red-500' : 'text-blue-500'
+                    }">
+                        ${notification.type === 'success' ? 'check_circle' :
+                          notification.type === 'warning' ? 'warning' :
+                          notification.type === 'error' ? 'error' : 'info'}
+                    </span>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-medium">${notification.title}</h4>
+                            <span class="text-xs text-gray-500">${this.formatDate(notification.date)}</span>
+                        </div>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">${notification.message}</p>
+                    </div>
+                    ${!notification.read ? '<span class="w-2 h-2 bg-blue-500 rounded-full mt-2"></span>' : ''}
+                </div>
+            </div>
+        `).join('');
+    },
+    
+    formatDate(dateString) {
+        const date = new Date(dateString);
+        const now = new Date();
+        const diff = now - date;
+        
+        if (diff < 60000) return 'Agora mesmo';
+        if (diff < 3600000) return `${Math.floor(diff / 60000)} min atrás`;
+        if (diff < 86400000) return `${Math.floor(diff / 3600000)} h atrás`;
+        
+        return date.toLocaleDateString('pt-BR');
+    },
+    
+    open() {
+        document.getElementById('notificationsModal').classList.remove('hidden');
+        this.render();
+    },
+    
+    close() {
+        document.getElementById('notificationsModal').classList.add('hidden');
+    },
+    
+    saveToStorage() {
+        localStorage.setItem('notifications', JSON.stringify(this.list));
+    },
+    
+    loadFromStorage() {
+        const saved = localStorage.getItem('notifications');
+        if (saved) {
+            this.list = JSON.parse(saved);
+        }
+    }
+};
 
-  <div id="newEventModal">
-    <h2>New Evente</h2>
+// ==============================
+// CALENDÁRIO COMPLETO 2026
+// ==============================
+const FullCalendar = {
+    currentYear: 2026,
+    
+    init() {
+        this.renderYear();
+    },
+    
+    renderYear() {
+        document.getElementById('calendarYear').textContent = this.currentYear;
+        const container = document.getElementById('fullCalendarGrid');
+        
+        const months = [
+            'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
+            'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+        ];
+        
+        container.innerHTML = months.map((month, index) => {
+            const monthNumber = index + 1;
+            const daysInMonth = new Date(this.currentYear, monthNumber, 0).getDate();
+            const firstDay = new Date(this.currentYear, index, 1).getDay();
+            
+            // Gerar dias do mês
+            let daysHtml = '';
+            for (let i = 0; i < firstDay; i++) {
+                daysHtml += '<div class="h-8"></div>';
+            }
+            
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dateStr = `${this.currentYear}-${monthNumber.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+                const hasSchedules = ScheduleSystem.hasSchedulesOnDate(dateStr);
+                const isToday = this.isToday(dateStr);
+                
+                daysHtml += `
+                    <div class="h-8 w-8 flex items-center justify-center text-sm rounded-full cursor-pointer
+                        ${isToday ? 'bg-primary text-white' : ''}
+                        ${hasSchedules ? 'font-bold text-blue-600 dark:text-blue-400' : ''}
+                        hover:bg-gray-100 dark:hover:bg-gray-800"
+                        onclick="FullCalendar.selectDate('${dateStr}')">
+                        ${day}
+                    </div>
+                `;
+            }
+            
+            return `
+                <div class="border rounded-lg p-4 dark:border-gray-800">
+                    <h4 class="font-bold mb-3">${month}</h4>
+                    <div class="grid grid-cols-7 gap-1">
+                        <div class="text-xs text-gray-500 text-center">D</div>
+                        <div class="text-xs text-gray-500 text-center">S</div>
+                        <div class="text-xs text-gray-500 text-center">T</div>
+                        <div class="text-xs text-gray-500 text-center">Q</div>
+                        <div class="text-xs text-gray-500 text-center">Q</div>
+                        <div class="text-xs text-gray-500 text-center">S</div>
+                        <div class="text-xs text-gray-500 text-center">S</div>
+                        ${daysHtml}
+                    </div>
+                </div>
+            `;
+        }).join('');
+    },
+    
+    isToday(dateStr) {
+        const today = new Date();
+        const date = new Date(dateStr);
+        return date.toDateString() === today.toDateString();
+    },
+    
+    selectDate(dateStr) {
+        const date = new Date(dateStr);
+        ScheduleSystem.selectedDate = dateStr;
+        ScheduleSystem.updateUI();
+        this.close();
+        
+        // Rolar para a seção de horários disponíveis
+        document.querySelector('h3.text-lg.font-bold.leading-tight.py-3')?.scrollIntoView({
+            behavior: 'smooth'
+        });
+    },
+    
+    prevYear() {
+        this.currentYear--;
+        this.renderYear();
+    },
+    
+    nextYear() {
+        this.currentYear++;
+        this.renderYear();
+    },
+    
+    open() {
+        document.getElementById('calendarModal').classList.remove('hidden');
+        this.renderYear();
+    },
+    
+    close() {
+        document.getElementById('calendarModal').classList.add('hidden');
+    }
+};
 
-    <input id="eventTitleInput" placeholder="Event Title"/>
+// ==============================
+// SISTEMA DE FILTROS
+// ==============================
+const Filters = {
+    currentFilters: {
+        types: [],
+        instructor: '',
+        location: '',
+        status: '',
+        startDate: '',
+        endDate: ''
+    },
+    
+    init() {
+        this.renderTypeFilters();
+        this.renderInstructors();
+        this.renderLocations();
+        this.loadFromStorage();
+    },
+    
+    renderTypeFilters() {
+        const types = [
+            { id: 'condicionamento', name: 'Condicionamento Físico', color: 'blue' },
+            { id: 'tiro', name: 'Tiro Tático', color: 'orange' },
+            { id: 'defesa', name: 'Defesa Pessoal', color: 'green' },
+            { id: 'musculacao', name: 'Musculação Livre', color: 'purple' },
+            { id: 'outros', name: 'Outros', color: 'gray' }
+        ];
+        
+        const container = document.getElementById('typeFilters');
+        container.innerHTML = types.map(type => `
+            <button onclick="Filters.toggleType('${type.id}')"
+                class="px-3 py-1.5 rounded-full border text-sm transition-colors
+                ${this.currentFilters.types.includes(type.id) 
+                    ? `bg-${type.color}-100 dark:bg-${type.color}-900/30 text-${type.color}-700 dark:text-${type.color}-400 border-${type.color}-300 dark:border-${type.color}-700`
+                    : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-700'}"
+                data-type="${type.id}">
+                ${type.name}
+            </button>
+        `).join('');
+    },
+    
+    renderInstructors() {
+        const instructors = [
+            'Agente Silva',
+            'Inspetor Costa',
+            'Agente Lima',
+            'Agente Rodrigues',
+            'Inspetora Santos',
+            'Agente Oliveira'
+        ];
+        
+        const select = document.getElementById('instructorFilter');
+        select.innerHTML = `
+            <option value="">Todos os instrutores</option>
+            ${instructors.map(instructor => `
+                <option value="${instructor}" ${this.currentFilters.instructor === instructor ? 'selected' : ''}>
+                    ${instructor}
+                </option>
+            `).join('')}
+        `;
+    },
+    
+    renderLocations() {
+        const locations = [
+            'Pista de Corrida',
+            'Estande A',
+            'Estande B',
+            'Academia Central',
+            'Centro de Treinamento - Sala A',
+            'Centro de Treinamento - Sala B',
+            'Quadra Poliesportiva',
+            'Piscina Olímpica'
+        ];
+        
+        const select = document.getElementById('locationFilter');
+        select.innerHTML = `
+            <option value="">Todos os locais</option>
+            ${locations.map(location => `
+                <option value="${location}" ${this.currentFilters.location === location ? 'selected' : ''}>
+                    ${location}
+                </option>
+            `).join('')}
+        `;
+    },
+    
+    toggleType(typeId) {
+        const index = this.currentFilters.types.indexOf(typeId);
+        if (index === -1) {
+            this.currentFilters.types.push(typeId);
+        } else {
+            this.currentFilters.types.splice(index, 1);
+        }
+        this.renderTypeFilters();
+    },
+    
+    apply() {
+        this.currentFilters.instructor = document.getElementById('instructorFilter').value;
+        this.currentFilters.location = document.getElementById('locationFilter').value;
+        this.currentFilters.status = document.getElementById('statusFilter').value;
+        this.currentFilters.startDate = document.getElementById('startDate').value;
+        this.currentFilters.endDate = document.getElementById('endDate').value;
+        
+        this.saveToStorage();
+        ScheduleSystem.applyFilters(this.currentFilters);
+        this.close();
+        
+        // Mostrar badge de filtro ativo
+        this.showActiveFilterBadge();
+    },
+    
+    clear() {
+        this.currentFilters = {
+            types: [],
+            instructor: '',
+            location: '',
+            status: '',
+            startDate: '',
+            endDate: ''
+        };
+        
+        document.getElementById('instructorFilter').value = '';
+        document.getElementById('locationFilter').value = '';
+        document.getElementById('statusFilter').value = '';
+        document.getElementById('startDate').value = '';
+        document.getElementById('endDate').value = '';
+        
+        this.renderTypeFilters();
+        ScheduleSystem.clearFilters();
+        this.hideActiveFilterBadge();
+    },
+    
+    showActiveFilterBadge() {
+        const hasActiveFilters = Object.values(this.currentFilters).some(value => 
+            Array.isArray(value) ? value.length > 0 : value !== ''
+        );
+        
+        if (hasActiveFilters) {
+            const filterButton = document.querySelector('button[onclick*="openFilters"]') || 
+                               document.querySelector('.filters-button');
+            if (filterButton) {
+                let badge = filterButton.querySelector('.filter-badge');
+                if (!badge) {
+                    badge = document.createElement('span');
+                    badge.className = 'filter-badge absolute -top-1 -right-1 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center';
+                    filterButton.style.position = 'relative';
+                    filterButton.appendChild(badge);
+                }
+                badge.textContent = '✓';
+            }
+        }
+    },
+    
+    hideActiveFilterBadge() {
+        const badge = document.querySelector('.filter-badge');
+        if (badge) badge.remove();
+    },
+    
+    open() {
+        document.getElementById('filtersModal').classList.remove('hidden');
+        this.loadFromStorage();
+    },
+    
+    close() {
+        document.getElementById('filtersModal').classList.add('hidden');
+    },
+    
+    saveToStorage() {
+        localStorage.setItem('filters', JSON.stringify(this.currentFilters));
+    },
+    
+    loadFromStorage() {
+        const saved = localStorage.getItem('filters');
+        if (saved) {
+            this.currentFilters = JSON.parse(saved);
+            this.renderTypeFilters();
+            
+            if (document.getElementById('instructorFilter')) {
+                document.getElementById('instructorFilter').value = this.currentFilters.instructor || '';
+                document.getElementById('locationFilter').value = this.currentFilters.location || '';
+                document.getElementById('statusFilter').value = this.currentFilters.status || '';
+                document.getElementById('startDate').value = this.currentFilters.startDate || '';
+                document.getElementById('endDate').value = this.currentFilters.endDate || '';
+            }
+        }
+    }
+};
 
-    <button id="saveButton"> Salvar</button>
-    <button id="cancelButton">Cancelar</button>
-  </div>
+// ==============================
+// HISTÓRICO DE AGENDAMENTOS
+// ==============================
+const History = {
+    init() {
+        this.loadFromStorage();
+        this.setupViewAllButton();
+    },
+    
+    loadFromStorage() {
+        const saved = localStorage.getItem('scheduleHistory');
+        if (saved) {
+            ScheduleSystem.schedules = ScheduleSystem.schedules.concat(JSON.parse(saved));
+        }
+    },
+    
+    saveToStorage() {
+        const history = ScheduleSystem.schedules.filter(s => {
+            const scheduleDate = new Date(s.date + ' ' + s.time.split('-')[0]);
+            return scheduleDate < new Date();
+        });
+        localStorage.setItem('scheduleHistory', JSON.stringify(history));
+    },
+    
+    getHistory() {
+        const now = new Date();
+        return ScheduleSystem.schedules.filter(schedule => {
+            const scheduleDate = new Date(schedule.date + ' ' + schedule.time.split('-')[0]);
+            return scheduleDate < now;
+        }).sort((a, b) => new Date(b.date) - new Date(a.date));
+    },
+    
+    setupViewAllButton() {
+        const viewAllBtn = document.querySelector('button.text-primary.text-sm.font-bold:contains("Ver todos")');
+        if (viewAllBtn) {
+            viewAllBtn.addEventListener('click', () => this.showHistoryModal());
+        }
+    },
+    
+    showHistoryModal() {
+        const history = this.getHistory();
+        
+        const modal = document.createElement('div');
+        modal.className = 'fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4';
+        modal.innerHTML = `
+            <div class="bg-white dark:bg-[#1C2029] rounded-xl w-full max-w-2xl max-h-[80vh] overflow-hidden">
+                <div class="p-6 border-b dark:border-gray-800">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-lg font-bold">Histórico de Agendamentos</h3>
+                        <button onclick="this.closest('.fixed').remove()" class="text-gray-500 hover:text-gray-700">
+                            <span class="material-symbols-outlined">close</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="overflow-y-auto max-h-[60vh] p-6">
+                    ${history.length === 0 ? `
+                        <div class="text-center py-8">
+                            <span class="material-symbols-outlined text-4xl text-gray-400 mb-2">history</span>
+                            <p class="text-gray-500">Nenhum agendamento no histórico</p>
+                        </div>
+                    ` : `
+                        <div class="space-y-4">
+                            ${history.map(schedule => `
+                                <div class="border rounded-lg p-4 dark:border-gray-800">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <div>
+                                            <h4 class="font-bold">${schedule.activity}</h4>
+                                            <div class="flex items-center gap-4 mt-2">
+                                                <span class="inline-flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400">
+                                                    <span class="material-symbols-outlined text-base">calendar_month</span>
+                                                    ${this.formatDate(schedule.date)}
+                                                </span>
+                                                <span class="inline-flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400">
+                                                    <span class="material-symbols-outlined text-base">schedule</span>
+                                                    ${schedule.time}
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <span class="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium
+                                            ${schedule.status === 'CONCLUÍDO' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400' :
+                                              schedule.status === 'CANCELADO' ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400' :
+                                              'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400'}">
+                                            ${schedule.status}
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                                        <span class="material-symbols-outlined text-base">person</span>
+                                        <span>${schedule.instructor}</span>
+                                        <span class="mx-2">•</span>
+                                        <span class="material-symbols-outlined text-base">location_on</span>
+                                        <span>${schedule.location}</span>
+                                    </div>
+                                    ${schedule.rating ? `
+                                        <div class="mt-3 pt-3 border-t dark:border-gray-800">
+                                            <div class="flex items-center gap-1">
+                                                ${this.renderStars(schedule.rating)}
+                                                <span class="text-sm text-gray-600 dark:text-gray-400 ml-2">
+                                                    ${schedule.rating}/5
+                                                </span>
+                                            </div>
+                                            ${schedule.comment ? `
+                                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">"${schedule.comment}"</p>
+                                            ` : ''}
+                                        </div>
+                                    ` : schedule.status === 'CONCLUÍDO' ? `
+                                        <div class="mt-3">
+                                            <button onclick="Ratings.openForSchedule(${schedule.id})"
+                                                class="text-sm text-primary hover:underline">
+                                                Avaliar este treino
+                                            </button>
+                                        </div>
+                                    ` : ''}
+                                </div>
+                            `).join('')}
+                        </div>
+                    `}
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(modal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) modal.remove();
+        });
+    },
+    
+    formatDate(dateStr) {
+        const date = new Date(dateStr);
+        return date.toLocaleDateString('pt-BR', {
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric'
+        });
+    },
+    
+    renderStars(rating) {
+        let stars = '';
+        for (let i = 1; i <= 5; i++) {
+            stars += `
+                <span class="material-symbols-outlined ${i <= rating ? 'text-yellow-500 fill-1' : 'text-gray-300'}">
+                    ${i <= rating ? 'star' : 'star'}
+                </span>
+            `;
+        }
+        return stars;
+    }
+};
 
-  <div id="deleteEventModal">
-    <h2>Evento</h2>
+// ==============================
+// SISTEMA DE AVALIAÇÃO
+// ==============================
+const Ratings = {
+    currentRating: 0,
+    selectedScheduleId: null,
+    
+    init() {
+        this.loadFromStorage();
+    },
+    
+    openForSchedule(scheduleId) {
+        const schedule = ScheduleSystem.schedules.find(s => s.id === scheduleId);
+        if (!schedule) return;
+        
+        this.selectedScheduleId = scheduleId;
+        this.currentRating = schedule.rating || 0;
+        
+        document.getElementById('ratingActivity').textContent = schedule.activity;
+        this.renderStars();
+        document.getElementById('ratingComment').value = schedule.comment || '';
+        
+        document.getElementById('ratingModal').classList.remove('hidden');
+    },
+    
+    renderStars() {
+        const container = document.getElementById('starRating');
+        const textElement = document.getElementById('ratingText');
+        
+        const ratings = [
+            'Péssimo',
+            'Ruim',
+            'Regular',
+            'Bom',
+            'Excelente'
+        ];
+        
+        container.innerHTML = '';
+        for (let i = 1; i <= 5; i++) {
+            const star = document.createElement('span');
+            star.className = `material-symbols-outlined text-3xl cursor-pointer ${
+                i <= this.currentRating ? 'text-yellow-500 fill-1' : 'text-gray-300'
+            }`;
+            star.textContent = 'star';
+            star.addEventListener('click', () => this.setRating(i));
+            star.addEventListener('mouseenter', () => this.previewRating(i));
+            container.appendChild(star);
+        }
+        
+        textElement.textContent = this.currentRating > 0 ? 
+            ratings[this.currentRating - 1] : 'Clique para avaliar';
+    },
+    
+    setRating(rating) {
+        this.currentRating = rating;
+        this.renderStars();
+    },
+    
+    previewRating(rating) {
+        const stars = document.querySelectorAll('#starRating .material-symbols-outlined');
+        const textElement = document.getElementById('ratingText');
+        const ratings = ['Péssimo', 'Ruim', 'Regular', 'Bom', 'Excelente'];
+        
+        stars.forEach((star, index) => {
+            star.classList.toggle('text-yellow-500', index < rating);
+            star.classList.toggle('fill-1', index < rating);
+            star.classList.toggle('text-gray-300', index >= rating);
+        });
+        
+        textElement.textContent = ratings[rating - 1];
+    },
+    
+    submit() {
+        if (this.currentRating === 0) {
+            alert('Por favor, selecione uma avaliação');
+            return;
+        }
+        
+        const schedule = ScheduleSystem.schedules.find(s => s.id === this.selectedScheduleId);
+        if (schedule) {
+            schedule.rating = this.currentRating;
+            schedule.comment = document.getElementById('ratingComment').value;
+            
+            // Atualizar no localStorage
+            ScheduleSystem.saveToStorage();
+            
+            // Notificação
+            Notifications.create({
+                title: 'Avaliação enviada!',
+                message: `Obrigado por avaliar "${schedule.activity}"`,
+                type: 'success'
+            });
+        }
+        
+        this.cancel();
+        
+        // Atualizar histórico se estiver aberto
+        const historyModal = document.querySelector('.fixed.inset-0');
+        if (historyModal) {
+            historyModal.remove();
+            History.showHistoryModal();
+        }
+    },
+    
+    cancel() {
+        this.currentRating = 0;
+        this.selectedScheduleId = null;
+        document.getElementById('ratingModal').classList.add('hidden');
+    },
+    
+    loadFromStorage() {
+        // As avaliações já estão salvas nos agendamentos
+    }
+};
 
-    <div id="eventText"></div><br>
+// ==============================
+// SISTEMA PRINCIPAL DE AGENDAMENTOS
+// ==============================
+const ScheduleSystem = {
+    schedules: [],
+    availableSlots: [],
+    selectedDate: new Date().toISOString().split('T')[0],
+    currentFilters: null,
+    
+    init() {
+        this.loadFromStorage();
+        this.setupEventListeners();
+        this.updateUI();
+        
+        // Inicializar módulos
+        Notifications.init();
+        FullCalendar.init();
+        Filters.init();
+        History.init();
+        Ratings.init();
+    },
+    
+    setupEventListeners() {
+        // Botão de filtros
+        const filterBtn = document.createElement('button');
+        filterBtn.className = 'filters-button flex items-center gap-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg px-4 py-2 ml-4';
+        filterBtn.innerHTML = `
+            <span class="material-symbols-outlined">filter_list</span>
+            <span class="text-sm">Filtros</span>
+        `;
+        filterBtn.onclick = () => Filters.open();
+        
+        document.querySelector('h3.text-lg.font-bold.leading-tight').parentElement.appendChild(filterBtn);
+        
+        // Botão de calendário completo
+        const calendarBtn = document.createElement('button');
+        calendarBtn.className = 'calendar-button flex items-center gap-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg px-4 py-2 ml-2';
+        calendarBtn.innerHTML = `
+            <span class="material-symbols-outlined">calendar_month</span>
+            <span class="text-sm">2026</span>
+        `;
+        calendarBtn.onclick = () => FullCalendar.open();
+        
+        document.querySelector('h3.text-lg.font-bold.leading-tight').parentElement.appendChild(calendarBtn);
+        
+        // Botão de notificações
+        const notificationBtn = document.querySelector('button .material-symbols-outlined:contains("notifications")').closest('button');
+        notificationBtn.onclick = () => Notifications.open();
+    },
+    
+    hasSchedulesOnDate(dateStr) {
+        return this.schedules.some(schedule => schedule.date === dateStr);
+    },
+    
+    applyFilters(filters) {
+        this.currentFilters = filters;
+        this.updateUI();
+    },
+    
+    clearFilters() {
+        this.currentFilters = null;
+        this.updateUI();
+    },
+    
+    updateUI() {
+        // Atualizar slots disponíveis com filtros
+        let filteredSlots = [...this.availableSlots];
+        
+        if (this.currentFilters) {
+            filteredSlots = filteredSlots.filter(slot => {
+                // Filtrar por tipo
+                if (this.currentFilters.types.length > 0 && 
+                    !this.currentFilters.types.includes(slot.type)) {
+                    return false;
+                }
+                
+                // Filtrar por instrutor
+                if (this.currentFilters.instructor && 
+                    slot.instructor !== this.currentFilters.instructor) {
+                    return false;
+                }
+                
+                // Filtrar por local
+                if (this.currentFilters.location && 
+                    slot.location !== this.currentFilters.location) {
+                    return false;
+                }
+                
+                // Filtrar por status
+                if (this.currentFilters.status === 'disponivel' && slot.vacancies === 0) {
+                    return false;
+                }
+                
+                return true;
+            });
+        }
+        
+        // Atualizar a UI com os slots filtrados
+        this.renderSlots(filteredSlots);
+        
+        // Atualizar data selecionada
+        this.updateSelectedDate();
+    },
+    
+    renderSlots(slots) {
+        // Implementar a renderização dos slots filtrados
+        console.log('Slots filtrados:', slots);
+    },
+    
+    updateSelectedDate() {
+        const dateElement = document.querySelector('h3.text-lg.font-bold.leading-tight.py-3');
+        if (dateElement) {
+            const date = new Date(this.selectedDate);
+            const day = date.getDate();
+            const month = date.toLocaleDateString('pt-BR', { month: 'long' });
+            dateElement.textContent = `Horários Disponíveis (${day} ${month})`;
+        }
+    },
+    
+    saveToStorage() {
+        localStorage.setItem('schedules', JSON.stringify(this.schedules));
+        localStorage.setItem('availableSlots', JSON.stringify(this.availableSlots));
+    },
+    
+    loadFromStorage() {
+        const savedSchedules = localStorage.getItem('schedules');
+        const savedSlots = localStorage.getItem('availableSlots');
+        
+        if (savedSchedules) this.schedules = JSON.parse(savedSchedules);
+        if (savedSlots) this.availableSlots = JSON.parse(savedSlots);
+    }
+};
 
+// ==============================
+// INICIALIZAÇÃO
+// ==============================
+document.addEventListener('DOMContentLoaded', function() {
+    ScheduleSystem.init();
+    
+    // Adicionar botão de notificações push
+    if ('Notification' in window && Notification.permission === 'default') {
+        const pushBtn = document.createElement('button');
+        pushBtn.className = 'fixed bottom-32 right-4 z-10 bg-green-500 text-white rounded-full h-14 px-6 shadow-lg shadow-green-500/40 hover:scale-105 transition-transform flex items-center gap-2';
+        pushBtn.innerHTML = `
+            <span class="material-symbols-outlined">notifications</span>
+            <span class="font-bold">Ativar alertas</span>
+        `;
+        pushBtn.onclick = () => Notifications.requestPermission();
+        document.body.appendChild(pushBtn);
+        
+        // Remover após 10 segundos
+        setTimeout(() => pushBtn.remove(), 10000);
+    }
+    
+    // Configurar dados iniciais
+    setupInitialData();
+});
 
-    <button id="deleteButton">Deletar</button>
-    <button id="closeButton">Fechar</button>
-  </div>
+function setupInitialData() {
+    // Dados de exemplo
+    ScheduleSystem.availableSlots = [
+        {
+            id: 1,
+            time: '10:00-11:00',
+            activity: 'Condicionamento Físico',
+            instructor: 'Agente Silva',
+            location: 'Pista de Corrida',
+            vacancies: 8,
+            available: true,
+            type: 'condicionamento'
+        },
+        {
+            id: 2,
+            time: '14:00-15:30',
+            activity: 'Tiro Tático',
+            instructor: 'Inspetor Costa',
+            location: 'Estande A',
+            vacancies: 3,
+            available: true,
+            type: 'tiro'
+        },
+        {
+            id: 3,
+            time: '16:00-17:00',
+            activity: 'Musculação Livre',
+            instructor: 'Agente Lima',
+            location: 'Academia Central',
+            vacancies: 0,
+            available: false,
+            type: 'musculacao'
+        }
+    ];
+    
+    ScheduleSystem.schedules = [
+        {
+            id: 101,
+            date: '2023-10-12',
+            time: '08:00-09:30',
+            activity: 'Treino de Defesa Pessoal',
+            location: 'Centro de Treinamento - Sala B',
+            status: 'CONFIRMADO',
+            instructor: 'Agente Rodrigues',
+            rating: 5,
+            comment: 'Excelente treino, instrutor muito didático!'
+        }
+    ];
+    
+    // Criar notificações de exemplo
+    Notifications.create({
+        title: 'Bem-vindo ao sistema!',
+        message: 'Seu sistema de agendamento está pronto para uso.',
+        type: 'info'
+    });
+    
+    Notifications.create({
+        title: 'Agendamento confirmado',
+        message: 'Treino de Defesa Pessoal para 12/10 às 08:00',
+        type: 'success'
+    });
+    
+    Notifications.create({
+        title: 'Novos horários disponíveis',
+        message: 'Confira os novos horários de Tiro Tático',
+        type: 'warning'
+    });
+}
+</script>
 
-  <div id="modalBackDrop"></div>
+<style>
+.notification-badge, .filter-badge {
+    font-size: 10px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
 
+#starRating .material-symbols-outlined {
+    transition: all 0.2s ease;
+}
 
-  <script src="scripts/darkMode.js"></script>
-  <script src="./scripts/main.js"></script>
-  
-</body>
-</html>
+#starRating .material-symbols-outlined:hover {
+    transform: scale(1.2);
+}
+
+/* Animações para notificações */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.notification {
+    animation: slideIn 0.3s ease;
+}
+
+/* Scroll personalizado */
+#notificationsList::-webkit-scrollbar,
+#fullCalendarGrid::-webkit-scrollbar {
+    width: 6px;
+}
+
+#notificationsList::-webkit-scrollbar-track,
+#fullCalendarGrid::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+#notificationsList::-webkit-scrollbar-thumb,
+#fullCalendarGrid::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+#notificationsList::-webkit-scrollbar-thumb:hover,
+#fullCalendarGrid::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+</style>
+</body></html>
